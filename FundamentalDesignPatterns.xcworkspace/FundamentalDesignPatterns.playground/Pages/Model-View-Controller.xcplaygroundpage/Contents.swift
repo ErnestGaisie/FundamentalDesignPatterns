@@ -61,4 +61,20 @@ public final class AddressViewController: UIViewController {
         addressView.stateTextField.text = address.state
         addressView.zipCodeTextField.text = address.zipCode
     }
+    
+    //Mark: - Actions
+    @IBAction public func updateAddressFromView(_ sender: AnyObject){
+        guard let street = addressView.streetTextField.text,
+              street.count > 0,
+              let city = addressView.cityTextField.text,
+              city.count > 0,
+              let state = addressView.stateTextField.text,
+              state.count > 0,
+              let zipCode = addressView.zipCodeTextField.text,
+              zipCode.count > 0 else {
+                //TODO: - Handle the erroor, show an error message, etc
+                return
+        }
+        address = Address(street: street, city: city, state: state, zipCode: zipCode)
+    }
 }
