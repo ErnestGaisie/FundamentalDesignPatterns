@@ -13,7 +13,7 @@
  */
 import UIKit
 
-public protocol MenuViewControllerDelegate: class {
+public protocol MenuViewControllerDelegate: AnyObject {
     func menuViewController(_ menuViewController: MenuViewController, didSelectItemAtIndex index: Int)
 }
 
